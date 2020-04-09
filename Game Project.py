@@ -24,6 +24,7 @@ class Humanoid:
 		self.hp = hp
 		self.archetype = archetype
 		self.attack = attack
+		self.can_damage = True
 	
 	def receive_damage(self, damage):
 		"""
@@ -41,8 +42,9 @@ class Humanoid:
 		@type character: Humanoid
 		@rtype: String
 		"""
-		print("You did a total damage of", self.attack)
-		character.receive_damage(self.attack)
+		if self.can_damage:
+			print("You did a total damage of", self.attack)
+			character.receive_damage(self.attack)
 
 
 player1 = Humanoid(100, 'human', 10)
@@ -101,7 +103,7 @@ class Player(Humanoid):
 	# 	return self.healspell
 	
 	def swing(self, character):
-		if self.sword:
+		if self.sword and self.can_damage:
 			self.attack_player(character)
 			self.attack_player(character)
 	
