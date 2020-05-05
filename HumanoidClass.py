@@ -68,7 +68,7 @@ monster2 = Humanoid(10, 'troll', 5, True, 1)
 
 
 class Player(Humanoid):
-	def __init__(self, name, mp, healspell, sword, cloak, wand, can_receive_damage):
+	def __init__(self, name, mp):
 		Humanoid.__init__(self, self.hp, self.attack, self.can_deal_damage)
 		"""
 		Represents the Player in the monster game.
@@ -89,11 +89,11 @@ class Player(Humanoid):
 		# self.skill = skill
 		self.name = name
 		self.mp = mp
-		self.healspell = healspell
-		self.sword = sword
-		self.cloak = cloak
-		self.wand = wand
-		self.can_receive_damage = can_receive_damage
+		self.healspell = True
+		self.sword = False
+		self.cloak = False
+		self.wand = False
+		self.can_receive_damage = True
 	
 	def cast_heal(self):
 		if self.mp >= 30 and self.healspell:
