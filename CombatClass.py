@@ -30,3 +30,4 @@ class Combat:
 		print("Enemy health:", Enemy.hp)
 		print("Your damage multiplier:", Player.dmg_mult)
 		print("Enemy damage multiplier:", Enemy.dmg_mult)
+ 
