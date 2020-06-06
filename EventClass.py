@@ -1,3 +1,4 @@
+from MapClass import Node
 import random
 
 
@@ -14,6 +15,7 @@ class Event:
 		4) blessing
 		5) Your choice
 		"""
+		self.position = Node
 		event_choice = random.randint(1, 5)
 		if event_choice == 1:
 			self.event = self.event_item()
@@ -86,11 +88,11 @@ class Event:
 		3) Major Single Stat Boost
 		# 4) Enchant Item/Improve weapon
 		"""
-		blessing_choice = input("A Wizard Wishes To Help You, He Offers To Bless You With His Wisdom"
-								"Choose Your Blessing:"
-								"1 - Restore"
-								"2 - Minor Overall Stat Raise"
-								"3 - Major Single Stat Boost")
+		blessing_choice = input("A Wizard Wishes To Help You, He Offers To Bless You With His Wisdom\n"
+								"Choose Your Blessing:\n"
+								"1 - Restore\n"
+								"2 - Minor Overall Stat Raise\n"
+								"3 - Major Single Stat Boost\n")
 		
 		blessing_dict = {1: 'Restore', 2: 'Minor Overall Stat Raise', 3: 'Major Single Stat Boost'}
 		

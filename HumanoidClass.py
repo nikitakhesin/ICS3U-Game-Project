@@ -1,17 +1,8 @@
-"""
-Mr. Park's Notes on Classes
-----------------
-1) Generalized tools with arbitrary characteristics used to run processes.
-	Example
-		- Computers, every computer has a set of components but specific to
-		certain models.
-2) Useful compliments to classes- inheritance, importing modules, repetitive
-calling for similar tasks.
-"""
+from MapClass import Node
 
 
 class Humanoid:
-	def __init__(self, hp, archetype, attack, can_deal_damage, dmg_mult):
+	def __init__(self, hp, archetype, attack):
 		"""
 		Represents a character in the monster game.
 
@@ -19,12 +10,15 @@ class Humanoid:
 		@type hp: float
 		@type archetype: string
 		@type attack: float
+		@type can_deal_damage: bool
 		@type dmg_mult: float
 		@rtype: None
 		"""
 		self.hp = hp
 		self.archetype = archetype
 		self.attack = attack
+		self.location = Node
+		
 		self.can_deal_damage = True
 		self.dmg_mult = 1
 	
@@ -49,9 +43,9 @@ class Humanoid:
 			character.receive_damage(self.attack)
 
 
-player1 = Humanoid(100, 'human', 10, True, 1)
-monster1 = Humanoid(10, 'goblin', 5, True, 1)
-monster2 = Humanoid(10, 'troll', 5, True, 1)
+player1 = Humanoid(100, 'human', 10)
+monster1 = Humanoid(10, 'goblin', 5)
+monster2 = Humanoid(10, 'troll', 5)
 
 # player1.attack_humanoid(monster1)
 # player1.attack_humanoid(monster2)
@@ -68,8 +62,8 @@ monster2 = Humanoid(10, 'troll', 5, True, 1)
 
 
 class Player(Humanoid):
-	def __init__(self, name, mp):
-		Humanoid.__init__(self, self.hp, self.attack, self.can_deal_damage)
+	def __init__(self, name, mp, hp, archetype, attack):
+		Humanoid.__init__(self, hp, archetype, attack)
 		"""
 		Represents the Player in the monster game.
 
